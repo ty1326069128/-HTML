@@ -1,0 +1,1859 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>TangYuan - 逸仙花店 </title>
+		<meta name="robots" content="noindex, follow" />
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+		<!-- CSS
+	============================================ -->
+
+		<!-- Bootstrap CSS -->
+		<!-- <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css"> -->
+
+		<!-- Icon Font CSS -->
+		<!-- <link rel="stylesheet" href="assets/css/vendor/plazaicon.css">
+    <link rel="stylesheet" href="assets/css/vendor/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css"> -->
+
+		<!-- Plugins CSS -->
+		<!-- <link rel="stylesheet" href="assets/css/plugins/animate.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/select2.min.css"> -->
+
+		<!-- Helper CSS -->
+		<link rel="stylesheet" href="assets/css/helper.css">
+
+		<!-- Main Style CSS -->
+		<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+
+		<!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+		<link rel="stylesheet" href="assets/css/plugins-min/plugins.min.css">
+		<link rel="stylesheet" href="assets/css/style.min.css">
+
+
+	</head>
+
+	<body>
+
+		<div class="main-wrapper" id="main-wrapper">
+
+
+			<!--Top Notification Start-->
+			<div class="top-notification-bar text-center" id="top-notification-bar"></div>
+			<!--Top Notification End-->
+
+			<!--Header Section Start-->
+			<div class="header-section d-none d-lg-block" id="main-header"></div>
+			<!--Header Section End-->
+
+			<!--Slider Start-->
+			<div class="slider-area" id="slider-area"></div>
+			<!--Slider End-->
+
+			<!--Shipping Start-->
+			<div class="shipping-area section-padding-3" id="shipping-area"></div>
+			<!--Shipping End-->
+
+			<!--New Product Start-->
+			<div class="new-product-area section-padding-2">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6 col-md-9 col-sm-11">
+							<div class="section-title text-center">
+								<h2 class="title">上新啦</h2>
+								<p>创造力、活力、沟通、幸福和爱的完美融合</p>
+							</div>
+						</div>
+					</div>
+					<div class="product-wrapper">
+						<div class="swiper-container product-active">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" v-for="item in swiperSlide">
+									<div class="single-product" :key="item.productContent.id">
+										<div class="product-image">
+											<a :href="item.productImage.url">
+												<img :src="item.productImage.imgSrc" alt="">
+											</a>
+											<span class="sticker-new soldout-title" v-if="item.productImage.title != '' ">{{item.productImage.title}}</span>
+
+											<div class="action-links">
+												<ul>
+													<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+													<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+													<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i class="icon-heart"></i></a></li>
+													<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+														 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="product-content text-center">
+											<ul class="rating">
+												<li class="rating-on"><i class="fa fa-star-o"></i></li>
+												<li class="rating-on"><i class="fa fa-star-o"></i></li>
+												<li class="rating-on"><i class="fa fa-star-o"></i></li>
+												<li class="rating-on"><i class="fa fa-star-o"></i></li>
+												<li class="rating-on"><i class="fa fa-star-o"></i></li>
+											</ul>
+											<h4 class="product-name"><a :href="item.productContent.url">{{item.productContent.name}}</a></h4>
+											<div class="price-box">
+												<span class="current-price">￥{{item.productContent.currentPrice}}</span>
+												<span class="old-price">￥{{item.productContent.oldPrice}}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Add Arrows -->
+							<div class="swiper-next"><i class="fa fa-angle-right"></i></div>
+							<div class="swiper-prev"><i class="fa fa-angle-left"></i></div>
+						</div>
+					</div>
+				</div>
+				<!--New Product End-->
+			</div>
+			
+			<!--About Start-->
+			<div class="about-area section-padding-4">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="about-image">
+								<img src="assets/images/about/about.jpg" alt="">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="about-content">
+								<h2 class="title">惊喜你的情人节！让我们为她安排一个微笑.</h2>
+								<p>花朵是我们创造永恒记忆的源泉。无论什么场合，灵感都能创造永恒的回忆.... </p>
+								<ul>
+									<li> 为你亲手挑选. </li>
+									<li> 为你专业设计. </li>
+									<li> 为你呈上满意. </li>
+								</ul>
+								<div class="about-btn">
+									<a href="#" class="btn btn-primary btn-round">更多信息</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--About End-->
+
+			<!--New Product Start-->
+			<div class="features-product-area section-padding-5">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6 col-md-9 col-sm-11">
+							<div class="section-title text-center">
+								<h2 class="title">精选花品</h2>
+								<p>创造力、活力、沟通、幸福和爱的完美融合.</p>
+							</div>
+						</div>
+					</div>
+					<div class="product-wrapper">
+						<div class="product-tab-menu">
+							<ul class="nav justify-content-center" role="tablist">
+								<li>
+									<a class="active" data-toggle="tab" href="#tab1" role="tab">New</a>
+								</li>
+								<li>
+									<a data-toggle="tab" href="#tab2" role="tab">Featured</a>
+								</li>
+								<li>
+									<a data-toggle="tab" href="#tab3" role="tab">Best Sellers</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="tab-content product-items-tab">
+							<div class="tab-pane fade show active" id="tab1" role="tabpanel">
+								<div class="swiper-container product-active">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide" v-for="item in swiperSlideHighNew">
+											<div class="single-product">
+												<div class="product-image">
+													<a :href="item[0].ss">
+														<img src="assets/images/product/product-8.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-34%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Lity Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+
+										</div>
+									</div>
+									<!-- Add Arrows -->
+									<div class="swiper-next"><i class="fa fa-angle-right"></i></div>
+									<div class="swiper-prev"><i class="fa fa-angle-left"></i></div>
+								</div>
+							</div>
+							
+							
+							<div class="tab-pane fade" id="tab2" role="tabpanel">
+								<div class="swiper-container product-active">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-2.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-27%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Rock Soapwort</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥55.00</span>
+														<span class="old-price">￥75.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-9.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-6.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-10%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Wild Roses</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥21.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-5.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-18%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Summer Savory</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥40.00</span>
+														<span class="old-price">￥85.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-8.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-34%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Lity Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-7.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Sweet Alyssum</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥50.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-1.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Spring Snowflake</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-2.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Rock Soapwort</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥50.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-7.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Sweet Alyssum</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥50.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-9.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-6.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-10%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Wild Roses</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥21.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-3.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-35%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+
+													<div class="product-countdown">
+														<div data-countdown="2020/12/31"></div>
+													</div>
+
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Scarlet Sage</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥39.00</span>
+														<span class="old-price">￥60.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-5.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-18%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Summer Savory</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥40.00</span>
+														<span class="old-price">￥85.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-4.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Foxglove Flower</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥79.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-9.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-8.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-34%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Lity Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-9.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-34%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Lity Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-1.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Spring Snowflake</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Add Arrows -->
+									<div class="swiper-next"><i class="fa fa-angle-right"></i></div>
+									<div class="swiper-prev"><i class="fa fa-angle-left"></i></div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="tab3" role="tabpanel">
+								<div class="swiper-container product-active">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-8.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-34%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Lity Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-7.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Sweet Alyssum</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥50.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-2.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-27%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Rock Soapwort</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥55.00</span>
+														<span class="old-price">￥75.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-9.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-1.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Spring Snowflake</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-2.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Rock Soapwort</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥50.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-5.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-18%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Summer Savory</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥40.00</span>
+														<span class="old-price">￥85.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-4.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Foxglove Flower</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥79.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-6.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-10%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Wild Roses</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥21.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-5.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-18%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Summer Savory</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥40.00</span>
+														<span class="old-price">￥85.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-9.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-8.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-34%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Lity Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-7.jpg" alt="">
+													</a>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Sweet Alyssum</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥50.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-9.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-8.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-34%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Lity Majesty Palm</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-1.jpg" alt="">
+													</a>
+
+													<span class="sticker-new soldout-title">Soldout</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Spring Snowflake</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-6.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-10%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Wild Roses</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥19.00</span>
+														<span class="old-price">￥21.00</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="single-product">
+												<div class="product-image">
+													<a href="shop-single.html">
+														<img src="assets/images/product/product-3.jpg" alt="">
+													</a>
+
+													<span class="sticker-new label-sale">-35%</span>
+
+													<div class="action-links">
+														<ul>
+															<li><a href="cart.html" data-tooltip="tooltip" data-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
+															<li><a href="compare.html" data-tooltip="tooltip" data-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+															<li><a href="wishlist.html" data-tooltip="tooltip" data-placement="left" title="Add to Wishlist"><i
+																	 class="icon-heart"></i></a></li>
+															<li><a href="javascript:void(0);" data-tooltip="tooltip" data-placement="left" title="Quick View"
+																 data-toggle="modal" data-target="#exampleModal"><i class="icon-eye"></i></a></li>
+														</ul>
+													</div>
+
+													<div class="product-countdown">
+														<div data-countdown="2020/12/31"></div>
+													</div>
+
+												</div>
+												<div class="product-content text-center">
+													<ul class="rating">
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+														<li class="rating-on"><i class="fa fa-star-o"></i></li>
+													</ul>
+													<h4 class="product-name"><a href="shop-single.html">Scarlet Sage</a></h4>
+													<div class="price-box">
+														<span class="current-price">￥39.00</span>
+														<span class="old-price">￥60.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Add Arrows -->
+									<div class="swiper-next"><i class="fa fa-angle-right"></i></div>
+									<div class="swiper-prev"><i class="fa fa-angle-left"></i></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--New Product End-->
+
+			<!--Testimonial Start-->
+			<div class="testimonial-area" style="background-image: url(assets/images/testimonial-bg.jpg);">
+				<div class="container">
+					<div class="swiper-container testimonial-active">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="single-testimonial text-center">
+									<p>欢笑终究抛不开眼泪哪里去找温驯的玫瑰.</p>
+
+									<div class="testimonial-author">
+										<img src="assets/images/testimonial-img-1.png" alt="">
+										<span class="author-name">Torvi / COO</span>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="single-testimonial text-center">
+									<p>现在当个快乐的女孩，中年时当个快乐的阿姨，老年时当个快乐的老太婆.</p>
+
+									<div class="testimonial-author">
+										<img src="assets/images/testimonial-img-2.png" alt="">
+										<span class="author-name">Shara / Founder</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Add Arrows -->
+						<div class="swiper-next"><i class="fa fa-angle-right"></i></div>
+						<div class="swiper-prev"><i class="fa fa-angle-left"></i></div>
+					</div>
+				</div>
+			</div>
+			<!--Testimonial End-->
+
+			<!--Copyright Section Start-->
+			<div class="copyright-section" id="copyright-section"></div>
+			<!--Copyright Section End-->
+
+			<!--Back To Start-->
+			<a href="#" class="back-to-top">
+				<i class="fa fa-angle-double-up"></i>
+			</a>
+			<!--Back To End-->
+
+
+		</div>
+	</body>
+	<!-- JS
+    ============================================ -->
+	<!-- Modernizer JS -->
+	<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+	<!-- jQuery JS -->
+	<script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+
+
+	<!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+	<script src="assets/js/plugins.min.js"></script>
+
+	<!-- Main JS -->
+	<script src="assets/js/main.js"></script>
+
+
+	<!-- Google Map js -->
+	<script src="https://ditu.google.cn/maps/api/js?key=AIzaSyBQ5y0EF8dE6qwc03FcbXHJfXr4vEa7z54"></script>
+	<script src="assets/js/map-script.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$("#main-header").load("common/main-header.html");
+			$("#top-notification-bar").load("common/top-notification-bar.html");
+			$("#slider-area").load("common/slider-area.html");
+			$("#copyright-section").load("common/copyright-section.html");
+			$("#shipping-area").load("common/shipping-area.html");
+		});
+	</script>
+
+
+	<script>
+		var app = new Vue({
+			el: '#main-wrapper',
+			data: {
+				swiperSlide: [{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-1.jpg",
+							"title": "售完"
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "非洲菊",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 1
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-2.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 2
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-3.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 3
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-4.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 4
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-5.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 5
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-6.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 6
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-7.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 7
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-8.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 8
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-9.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 9
+						}
+					},
+				],
+				swiperSlideHighNew : [{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-1.jpg",
+							"title": "售完"
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "非洲菊",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 1
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-2.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 2
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-3.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 3
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-4.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 4
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-5.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 5
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-6.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 6
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-7.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 7
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-8.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 8
+						}
+					},
+					{
+						"productImage": {
+							"url": "shop-single.html",
+							"imgSrc": "assets/images/product/product-9.jpg",
+							"title": ""
+						},
+						"productContent": {
+							"url": "shop-single.html",
+							"name": "香氛",
+							"currentPrice": 19.9,
+							"oldPrice": 29.9,
+							"id": 9
+						}
+					},
+				]
+			}
+		})
+	</script>L
+
+</html>
